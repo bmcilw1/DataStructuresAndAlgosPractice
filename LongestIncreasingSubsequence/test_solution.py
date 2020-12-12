@@ -1,4 +1,6 @@
-from LongestIncreasingSubsequence.solution import Solution
+from solution import Solution
 
-def test_sol_whenPassedOneNumber_returnsOne():
-    assert Solution.lengthOfLIS([1]) == 1
+class TestSolution:
+    def test_lengthOfLIS_whenPassedOneNumber_returnsOne(self):
+        solution = Solution()
+        assert solution.lengthOfLIS([1]) == 1
