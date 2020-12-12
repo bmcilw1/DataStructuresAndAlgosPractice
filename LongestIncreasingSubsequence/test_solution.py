@@ -11,4 +11,4 @@ def solution():
 
 class TestSolution:
     def test_lengthOfLIS_whenPassedOneNumber_returnsOne(self, solution):
-        assert solution.lengthOfLIS([1]) == 1
+        assert solution.lengthOfLIS([8]) == 1
