@@ -4,7 +4,7 @@ class Solution:
     def lengthOfLongestIncreasingSubsequence(self, nums: list[int]) -> int:
         lis = [1] * len(nums) 
 
-        for idx in range(0, len(nums)):
+        for idx in range(1, len(nums)):
             subs = []
 
             for idx_sub in range(0, idx):
