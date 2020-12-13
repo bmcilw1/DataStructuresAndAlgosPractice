@@ -23,14 +23,24 @@ You get
 
 The longest chain is the first or the second, either one is irreverent.
 
-Each problem can be broken down into sub problems, and they form a series of directed acyclic graph (DAG).
+Each problem can be broken down into sub problems, and these sub-problems form a series of directed acyclic graph (DAG). This is the first telltale characteristic of a DP problem.
+
+Now, let's see what happens when we add more elements to the end of the list, on the end that's pointed to by the DAG.
 
 Given
 [0,3,1,6,2,2,7]
-0 -> 3 -> 6
-0 -> 1 -> 6
-3 -> 6
-1 -> 6
+
+You get
+(0 -> 3 -> 6) -> 7
+(0 -> 1 -> 6) -> 7
+(3 -> 6) -> 7
+(1 -> 6) -> 7
+2 -> 7
+2 -> 7
+
+Again, the top two are the longest.
+
+Notice that the answer builds directly on the previous.
 
 ### Resources
 * [This](https://www.youtube.com/watch?v=aPQY__2H3tE) video walks through this particular problem
