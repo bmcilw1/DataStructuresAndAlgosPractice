@@ -44,7 +44,7 @@ You get
 (1 -> 6) -> 7
 2 -> 7
 2 -> 7
-0 -> 1 -> 2 -> 7
+[0 -> 1] -> 2 -> 7  # [0 -> 1] would have been taken into account in the subset [0, 3, 1]
 ```
 
 Again, the top two are the longest.
