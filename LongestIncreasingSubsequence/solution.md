@@ -45,5 +45,5 @@ Notice that the answer builds directly on top of the previous. This is the secon
 
 Also, notice how the last answer changed part of the answer chain from the subproblem before. This means that just because a solution is best for a subproblem, does not mean it will be for a larger problem. There is generally no greedy algorithm that works for these.
 
-### Resources
+## Resources
 * [This](https://www.youtube.com/watch?v=aPQY__2H3tE) video walks through this particular problem
