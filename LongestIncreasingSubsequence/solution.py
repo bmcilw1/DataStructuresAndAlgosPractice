@@ -2,14 +2,13 @@
 
 class Solution:
     def lengthOfLongestIncreasingSubsequence(self, nums: list[int]) -> int:
-        N = len(nums)
-        lis = [1] * (N + 1)
+        lis = [1] * len(nums) 
 
-        for idx, n in enumerate(nums, start=1):
+        for idx in range(0, len(nums)):
             subs = []
 
             for idx_sub in range(0, idx):
-                if nums[idx_sub] < n:
+                if nums[idx_sub] < nums[idx]:
                     subs.append(lis[idx_sub])
 
             lis[idx] = 1 + max(subs, default=0)
