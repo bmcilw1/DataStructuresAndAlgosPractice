@@ -10,7 +10,7 @@ class Solution:
 
             for idx_sub in range(0, idx):
                 if nums[idx_sub] < n:
-                    subs[idx_sub] = lis[idx_sub]
+                    subs.append(lis[idx_sub])
 
             lis[idx] = 1 + max(subs, default=0)
 
