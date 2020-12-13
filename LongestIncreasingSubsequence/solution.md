@@ -51,7 +51,9 @@ Again, the top two are the longest.
 
 Notice that the answer builds directly on top of the previous. This is the second characteristic of a DP problem, it can be broken up into a series of smaller problems. If these smaller problems are upstream of the direction of the DAG, you can usually find a way to just add on one more item to the end of the list while building on the computations you've already done to that point.
 
-Also, notice how the last answer changed part of the answer chain from the subproblem before. This means that just because a solution is best for a subproblem, does not mean it will be for a larger problem. There is generally no greedy algorithm that works for a DP problem.
+Also, notice how the last answer changed part of the answer chain from the subproblem before. This means that just because a solution is best for some subproblem, does not mean that solution will be best for a larger problem. However, the part (0 -> 1) would have been contained in an even smaller sub-problem (before adding the 6).
+
+There is generally no greedy algorithm that works for a DP problem. For a given LIS of k, you need to take into account the answers to all LIS from 0 to k-1, not just the k-1 case.
 
 ## Resources
 * [This](https://www.youtube.com/watch?v=aPQY__2H3tE) video walks through this particular problem
