@@ -27,7 +27,7 @@ You get
 
 The longest chain is the first or the second, either one is irreverent.
 
-Each problem can be broken down into sub problems, and these sub-problems form a series of directed acyclic graph (DAG). This is the first telltale characteristic of a DP problem.
+Each problem can be broken down into sub problems, and these sub-problems form a series of directed acyclic graphs (DAG). It's directed because we can only go one way through the graph. It's acyclic because there are no edges going to prior elements or creating loops. This is the first telltale characteristic of a DP problem.
 
 Now, let's see what happens when we add more elements to the end of the list, on the end that's pointed to by the DAG.
 
@@ -53,7 +53,7 @@ Notice that the answer builds directly on top of the previous. This is the secon
 
 Also, notice how the last answer changed part of the answer chain from the subproblem before. This means that just because a solution is best for some subproblem, does not mean that solution will be best for a larger problem. However, the part (0 -> 1) would have been contained in an even smaller sub-problem (before adding the 6).
 
-There is generally no greedy algorithm that works for a DP problem. For a given LIS of k, you need to take into account the answers to all LIS from 0 to k-1, not just the k-1 case.
+There is generally no greedy algorithm that works for a DP problem. For a given LIS of k, you need to take into account the answers to all LIS from 0 to k-1, not just the k-1 case / not just the last best overall case. This means there is not going to be any O(N) solution to this particular problem.
 
 ## Resources
 * [This](https://www.youtube.com/watch?v=aPQY__2H3tE) video walks through this particular problem
