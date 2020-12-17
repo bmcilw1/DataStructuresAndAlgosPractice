@@ -71,6 +71,6 @@ We can now work on a recursive definition for Change.
 
 Base cases:
 If amount is zero, return 0 # No work
-If amount in set(coins), return 1 # Exact change
+If amount in set(coins), return 1 # If one coin is possible, this is the best option
 
 These are the easier cases to cover. Now, we need to figure out how to know when an amount can't be given equal change.
