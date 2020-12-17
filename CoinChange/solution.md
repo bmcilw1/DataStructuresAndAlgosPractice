@@ -74,3 +74,9 @@ If amount is zero, return 0 # No work
 If amount in set(coins), return 1 # If one coin is possible, this is the best option
 
 These are the easier cases to cover. Now, we need to figure out how to know when an amount can't be given equal change.
+
+For each coin in set(coins), we can try to make change with 1 + change(amount-coin). We can then say that the final answer is the min of those each answer given > -1.
+
+The only thing left is to figure out how to detect no possible change.
+
+If amount < min(set(coins)), we know there is no change possible.

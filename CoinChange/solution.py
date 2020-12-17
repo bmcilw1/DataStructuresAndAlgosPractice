@@ -2,21 +2,30 @@
 
 class Solution:
     coins = set()
-    past_change = dict()
+    calculated_change = {}
+    min_coin = 0
 
     def coinChange(self, coins: list[int], amount: int) -> int:
         self.coins = set(coins)
+        self.min_coin = min(coins)
+        self.calculated_change = {}
+        self.calculated_change[0] = 0
         return self.change(amount)
 
     def change(self, amount: int) -> int:
-        if amount in self.past_change:
-            return self.past_change[amount]
-
-        if amount == 0:
-            self.past_change[amount] = 0
+        if amount in self.calculated_change:
+            pass
+        elif amount < self.min_coin:
+            self.calculated_change[amount] = -1
         elif amount in self.coins:
-            self.past_change[amount] = 1
+            self.calculated_change[amount] = 1
         else:
-            self.past_change[amount] = -1
+            min_change = float('inf')
+            for coin in self.coins:
+                change_less_coin = 1 + self.change(amount - coin)
+                if change_less_coin > 0 and change_less_coin < min_change:
+                    min_change = change_less_coin
 
-        return self.past_change[amount]
+            self.calculated_change[amount] = -1 if min_change == float('inf') else min_change
+
+        return self.calculated_change[amount]
