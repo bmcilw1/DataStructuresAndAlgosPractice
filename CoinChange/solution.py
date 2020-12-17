@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 
 class Solution:
-    coins = set()
-    calculated_change = {}
-    min_coin = 0
-
     def coinChange(self, coins: list[int], amount: int) -> int:
         self.coins = set(coins)
         self.min_coin = min(coins)
