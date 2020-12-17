@@ -12,4 +12,4 @@ class Solution:
                 lis[j] for j in range(i) if nums[j] < nums[i]]
             lis[i] = 1 + max(prior_LIS_with_num_less_than_i, default=0)
 
-        return max(lis, default=0)
+        return lis[-1]
