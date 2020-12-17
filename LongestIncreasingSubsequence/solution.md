@@ -63,7 +63,7 @@ The first way we can solve this is by starting at the beginning of the list and 
 LIS(nums, k) = 1 + max(LIS(j) for all j < k where nums[j] < nums[k])
 ```
 
-If we compute that for all k, our final answer is `LIS(nums, N-1)`. N-1 is passed due to zero-based indexing of arrays. If we store answers to LIS in an array of size N, then `LIS(nums, N-1) = LIS[N-1]`
+If we compute that for all k, our final answer is `LIS(nums, N-1)`. N-1 is passed due to zero-based indexing of arrays. If we store answers to LIS in an array of size N, then `LIS(nums, N-1) = LIS[N-1]`.
 
 If we compute LIS for all k < n with the nested for loop, we get a solution that runs in O(N^2) time and taking O(N) space (for storing the LIS array).
 
