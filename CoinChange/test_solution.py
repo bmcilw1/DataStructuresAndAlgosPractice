@@ -23,4 +23,4 @@ class TestSolution:
         assert solution.coinChange([1], 2) == 2
 
     def test_coinChange_mixedBag(self, solution):
-        assert solution.coinChange([1,2,5], 11) == 3
+        assert solution.coinChange([1, 2, 5], 11) == 3
