@@ -12,6 +12,8 @@ class Solution:
             pass
         elif amount < self.min_coin:
             self.calculated_change[amount] = -1
+        elif amount in self.coins:
+            self.calculated_change[amount] = 1
         else:
             min_change = float('inf')
             for coin in self.coins:

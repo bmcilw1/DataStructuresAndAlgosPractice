@@ -70,13 +70,24 @@ Notice the multiple calls to Change(5). This indicates that this will be a DP pr
 We can now work on a recursive definition for Change.
 
 Base cases:
-If amount is zero, return 0 # No work
-If amount in set(coins), return 1 # If one coin is possible, this is the best option
+
+1. If amount is zero, return 0 # No work
+2. If amount in set(coins), return 1 # If one coin is possible, this is the best option
 
 These are the easier cases to cover. Now, we need to figure out how to know when an amount can't be given equal change.
 
-For each coin in set(coins), we can try to make change with 1 + change(amount-coin). We can then say that the final answer is the min of those each answer given > -1.
+3. If amount < min(set(coins)), we know there is no change possible.
 
-The only thing left is to figure out how to detect no possible change.
+Recursive case:
 
-If amount < min(set(coins)), we know there is no change possible.
+4. For each coin in set(coins), we can try to make change with 1 + change(amount-coin). We can then say that the final answer is the min of those each answer given that are greater than -1. If no answer exists, we return -1.
+
+> Note, case 2 can be included in case 4. However, we will save a few cpu cycles by separating it.
+
+```
+Let N = length(coins), M = amount
+```
+
+The time complexity is given by O(NM). This is because the recursive call stack will be called at worst M times and each call will walk through the set of coins of length N at worst.
+
+The space complexity is O(M). This is because the recursive call stack will be M worst case. We can read the list of coins directly so N has no effect on space complexity.
