@@ -8,8 +8,8 @@ class Solution:
         lis = [1] * len(nums)
 
         for i in range(1, len(nums)):
-            lis_before_with_nums_less_than_i = [
-                lis[j] for j in range(0, i) if nums[j] < nums[i]]
-            lis[i] = 1 + max(lis_before_with_nums_less_than_i, default=0)
+            prior_elements_less_than_i = [
+                lis[j] for j in range(i) if nums[j] < nums[i]]
+            lis[i] = 1 + max(prior_elements_less_than_i, default=0)
 
         return max(lis, default=0)
