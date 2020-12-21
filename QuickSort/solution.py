@@ -18,7 +18,7 @@ class Solution:
         return i
 
     def _quickSort(self, nums: list[int], start: int, end: int):
-        if (end < start):
+        if (end < start + 1):
             return
 
         pivot = (end - start) // 2 + start
