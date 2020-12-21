@@ -23,9 +23,9 @@ class Solution:
 
         pivot = (end - start) // 2 + start
 
-        i = self._partition(nums, start, end, pivot)
-        self._quickSort(nums, start, i-1)
-        self._quickSort(nums, i+1, end)
+        pivot_position = self._partition(nums, start, end, pivot)
+        self._quickSort(nums, start, pivot_position-1)
+        self._quickSort(nums, pivot_position+1, end)
 
     def quickSort(self, nums: list[int]) -> list[int]:
         copy_nums = copy.deepcopy(nums)
