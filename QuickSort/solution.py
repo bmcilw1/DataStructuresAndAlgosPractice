@@ -29,6 +29,5 @@ class Solution:
 
     def quickSort(self, nums: list[int]) -> list[int]:
         copy_nums = copy.deepcopy(nums)
-        print(nums)
         self._quickSort(copy_nums, 0, len(nums) - 1)
         return copy_nums
